@@ -19,10 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from kingdom device
 $(call inherit-product, device/lenovo/kingdom/kingdom.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common MK stuff.
+$(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_kingdom
+PRODUCT_NAME := mk_kingdom
 PRODUCT_DEVICE := kingdom
 PRODUCT_BRAND := Lenovo
 PRODUCT_MANUFACTURER := Lenovo
