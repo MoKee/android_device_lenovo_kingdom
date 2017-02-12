@@ -15,9 +15,6 @@
 # limitations under the License.
 #
 
-# Build type
-CM_BUILDTYPE := NIGHTLY
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
 
@@ -71,6 +68,10 @@ PRODUCT_PACKAGES += \
     Snap
 
 # Dalvik/HWUI
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=512m
+
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
@@ -236,8 +237,7 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    init.qcom.bt.sh \
-    init.qcom.fm.sh
+    init.qcom.bt.sh
 
 # Thermal
 PRODUCT_COPY_FILES += \
