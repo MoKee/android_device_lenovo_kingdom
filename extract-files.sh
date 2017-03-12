@@ -49,8 +49,6 @@ else
   fi
 fi
 
-"$MK_ROOT"/device/qcom/common/extractors/extract-files.sh "$SRC" msm8974 graphics
-
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$MK_ROOT"
 
